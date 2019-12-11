@@ -23,6 +23,8 @@
 
 - [Linear Search](./Divide-and-Conquer/linearSearch.js)
 - [Binary Search](./Divide-and-Conquer/binarySearch.js)
+- [Merge Sort](./Divide-and-Conquer/mergeSort.js)
+- [Bubble Sort](./Divide-and-Conquer/bubbleSort.js)
 
 ## Big-O Complexity Chart
 
