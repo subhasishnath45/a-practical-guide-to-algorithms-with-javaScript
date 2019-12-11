@@ -3,7 +3,7 @@ let times10 = n => n * 10;
 
 const cache = {};
 
-const memoTimes10 = n => {
+let memoTimes10 = n => {
   if (cache[n]) {
     return cache[n];
   }
@@ -38,42 +38,31 @@ console.log('cached:', memoClosureTimes10(9));
 console.log('');
 
 // Memoization with Closure Util
-let memoizedUtil = func => {
+const memoize = func => {
   const cache = {};
 
-  return input => {
-    if (cache[input]) {
-      return cache[input];
-    }
+  return (...args) => {
+    const [input] = args;
+    if (input in cache) return cache[input];
+
     cache[input] = func(input);
     return cache[input];
   };
 };
 
-const memoUtilTimes10 = memoizedUtil(times10);
+memoTimes10 = memoize(times10);
 
 console.log('Memoization with Closures Util');
-console.log('calculated:', memoUtilTimes10(9));
-console.log('cached:', memoUtilTimes10(9));
+console.log('calculated:', memoTimes10(9));
+console.log('cached:', memoTimes10(9));
 console.log('');
 
 // Memoization with Generic Closure Util
-const timesX = (n, x) => n * x;
-
-memoizedUtil = (...[func, x]) => {
-  const cache = {};
-
-  return input => {
-    if (cache[input]) {
-      return cache[input];
-    }
-    cache[input] = func(input, x);
-    return cache[input];
-  };
-};
-
-const memoUtilTimes20 = memoizedUtil(timesX, 20);
+const memoTimes20 = memoize(n => n * 20);
+const memoTimes30 = memoize(n => n * 30);
 
 console.log('Memoization with Generic Closures Util');
-console.log('calculated:', memoUtilTimes20(9));
-console.log('cached:', memoUtilTimes20(9));
+console.log('calculated:', memoTimes20(9));
+console.log('cached:', memoTimes20(9));
+console.log('calculated:', memoTimes30(9));
+console.log('cached:', memoTimes30(9));
