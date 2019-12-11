@@ -2,11 +2,11 @@
 
 ## Space Complexity
 
-How much `memory` used?
+> How much `memory` used?
 
 ## Time Complexity
 
-How many primitive `operations` are executed?
+> How many primitive `operations` are executed?
 
 ## Optimization with Caching
 
@@ -15,6 +15,9 @@ How many primitive `operations` are executed?
 - [memorization](./Optimization/memoization.js)
 
 ## Recursion
+
+- [joinElements](./Recursion/joinElements.js)
+- [factorial](./Recursion/factorial.js)
 
 ## Big-O Complexity Chart
 
