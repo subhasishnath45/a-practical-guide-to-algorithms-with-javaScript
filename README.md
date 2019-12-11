@@ -14,6 +14,8 @@ How many primitive `operations` are executed?
 - [uniqSort](./Optimization/uniqSort.js)
 - [memorization](./Optimization/memoization.js)
 
+## Recursion
+
 ## Big-O Complexity Chart
 
 ![Big-O CheatSheet](./assets/Big-O-CheatSheet.png)
