@@ -9,8 +9,13 @@ let uniqSort = (...args) => {
   return result.sort((a, b) => a - b);
 };
 
-console.log('Tests');
-console.log(uniqSort(...[4, 2, 2, 3, 2, 2, 2]).join('') === [2, 3, 4].join(''));
+const test = bool => {
+  return bool ? 'Test Passed' : 'Test failed';
+};
+
+console.log(
+  test(uniqSort(...[4, 2, 2, 3, 2, 2, 2]).join('') === [2, 3, 4].join(''))
+);
 
 // With Caching O(n)
 uniqSort = (...args) => {
@@ -27,5 +32,6 @@ uniqSort = (...args) => {
   return result.sort((a, b) => a - b);
 };
 
-console.log('Tests');
-console.log(uniqSort(...[4, 2, 2, 3, 2, 2, 2]).join('') === [2, 3, 4].join(''));
+console.log(
+  test(uniqSort(...[4, 2, 2, 3, 2, 2, 2]).join('') === [2, 3, 4].join(''))
+);

@@ -15,8 +15,11 @@ const factorial = memoize(num => {
   return num * factorial(num - 1);
 });
 
-console.log('Tests');
-console.log(factorial(5)); // calculated
-console.log(factorial(5)); // cached
-console.log(factorial(6)); // cached calculated
-console.log(factorial(6)); // cached
+const test = bool => {
+  return bool ? 'Test Passed' : 'Test failed';
+};
+
+console.log(test(factorial(5) === 120)); // calculated
+console.log(test(factorial(5) === 120)); // cached
+console.log(test(factorial(6) === 720)); // cached calculated
+console.log(test(factorial(6) === 720)); // cached

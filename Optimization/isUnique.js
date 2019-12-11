@@ -11,9 +11,12 @@ let isUnique = (...args) => {
   return result;
 };
 
-console.log('Tests');
-console.log(isUnique(...[1, 2, 3]) === true);
-console.log(isUnique(...[1, 1, 3]) === false);
+const test = bool => {
+  return bool ? 'Test Passed' : 'Test failed';
+};
+
+console.log(test(isUnique(...[1, 2, 3]) === true));
+console.log(test(isUnique(...[1, 1, 3]) === false));
 
 // With Caching O(n)
 isUnique = (...args) => {
@@ -27,6 +30,5 @@ isUnique = (...args) => {
   return result;
 };
 
-console.log('Tests');
-console.log(isUnique(...[1, 2, 3]) === true);
-console.log(isUnique(...[1, 1, 3]) === false);
+console.log(test(isUnique(...[1, 2, 3]) === true));
+console.log(test(isUnique(...[1, 1, 3]) === false));

@@ -13,9 +13,14 @@ let joinElements = (...[array, joinString]) => {
   return recurse(0, '');
 };
 
-console.log('Tests');
+const test = bool => {
+  return bool ? 'Test Passed' : 'Test failed';
+};
+
 console.log(
-  joinElements(['s', 'cr', 't cod', ' :) :)'], 'e') === 'secret code :) :)'
+  test(
+    joinElements(['s', 'cr', 't cod', ' :) :)'], 'e') === 'secret code :) :)'
+  )
 );
 
 // joinElements with For Loop
@@ -31,7 +36,8 @@ joinElements = (...[array, joinString]) => {
   return result; //?
 };
 
-console.log('Tests');
 console.log(
-  joinElements(['s', 'cr', 't cod', ' :) :)'], 'e') === 'secret code :) :)'
+  test(
+    joinElements(['s', 'cr', 't cod', ' :) :)'], 'e') === 'secret code :) :)'
+  )
 );
